@@ -6,6 +6,8 @@ module Api
         if @user.valid?
           @user.save
           render json: @user, status: :created
+        else
+          render json: { errors: @user.errors.messages }, status: :bad_request
         end
       end
 
