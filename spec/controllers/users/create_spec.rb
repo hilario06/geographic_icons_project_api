@@ -35,6 +35,5 @@ RSpec.describe Api::V1::UsersController, type: :controller do
         it { is_expected.to include(:errors) }
       end
     end
-
   end
 end
