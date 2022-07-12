@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2022_07_11_232437) do
 
   create_table "cities", force: :cascade do |t|
     t.string "denomination"
-    t.integer "number_of_inhabitants"
+    t.integer "number_of_inhabitants", default: 0
     t.float "totat_surface_area"
     t.bigint "country_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2022_07_11_232437) do
 
   create_table "countries", force: :cascade do |t|
     t.string "denomination"
-    t.integer "number_of_inhabitants"
+    t.integer "number_of_inhabitants", default: 0
     t.float "totat_surface_area"
     t.bigint "continent_id", null: false
     t.datetime "created_at", precision: 6, null: false
