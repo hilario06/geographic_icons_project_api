@@ -17,6 +17,7 @@ module Api
         @user = User.find_by(email: login_params[:email])
         # authenticate lo proporciona bcrypt
         if @user.present? && @user.authenticate(login_params[:password]) # second condicional si el usuario hace match con el usuario que envio
+          @token = @user.tokens.create
           render :show
         else
           render( json: { errors: I18n.t('user.bad_credentials')}, status: :bad_request)
