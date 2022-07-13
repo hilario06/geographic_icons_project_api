@@ -21,5 +21,8 @@ RSpec.describe User, type: :model do
     it 'validar si age es un numero entero' do
       should validate_numericality_of(:age).only_integer
     end
+    it 'Validar relacion con tokens' do
+      should have_many(:tokens)
+    end
   end
 end
