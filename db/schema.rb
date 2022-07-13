@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_11_232437) do
+ActiveRecord::Schema.define(version: 2022_07_13_194107) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,15 @@ ActiveRecord::Schema.define(version: 2022_07_11_232437) do
     t.index ["city_id"], name: "index_geographic_icons_on_city_id"
   end
 
+  create_table "tokens", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "token"
+    t.datetime "expires_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_tokens_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.integer "age"
@@ -63,4 +72,5 @@ ActiveRecord::Schema.define(version: 2022_07_11_232437) do
   add_foreign_key "cities", "countries"
   add_foreign_key "countries", "continents"
   add_foreign_key "geographic_icons", "cities"
+  add_foreign_key "tokens", "users"
 end
