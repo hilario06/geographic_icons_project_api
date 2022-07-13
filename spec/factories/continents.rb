@@ -9,6 +9,6 @@
 #
 FactoryBot.define do
   factory :continent do
-    denomination { "MyString" }
+    denomination { ['America', 'Asia', 'Africa', 'Europe', 'Oceania', 'Antarctica'].sample }
   end
 end
