@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: countries
+#
+#  id                    :bigint           not null, primary key
+#  denomination          :string
+#  number_of_inhabitants :integer          default(0)
+#  totat_surface_area    :float
+#  continent_id          :bigint           not null
+#  created_at            :datetime         not null
+#  updated_at            :datetime         not null
+#
 class Country < ApplicationRecord
   belongs_to :continent
   has_many :cities, dependent: :destroy

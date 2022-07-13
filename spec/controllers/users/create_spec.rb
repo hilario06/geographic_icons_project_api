@@ -17,7 +17,11 @@ RSpec.describe Api::V1::UsersController, type: :controller do
       end
       context 'Respuesta con valores correctos de user' do
         subject { payload_test } # desde helpers/application_helper/method convirtiendo a json
-        it { is_expected.to include(:id, :email, :age) }
+        it { is_expected.to include(:id, :email, :age, :token) }
+      end
+      context 'Respuesta con valores correctos de token' do
+        subject { payload_test[:token] }
+        it { is_expected.to include(:id, :token, :expires_at) }
       end
     end
 
