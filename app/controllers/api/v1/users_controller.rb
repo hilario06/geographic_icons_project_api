@@ -5,6 +5,7 @@ module Api
         @user = User.new(user_params)
         if @user.valid?
           @user.save
+          @token = @user.tokens.create  # viene el token, fecha de expiracion, ...
           # render json: @user, status: :created
           render :show, status: :created
         else
