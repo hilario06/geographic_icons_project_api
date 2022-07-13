@@ -12,9 +12,10 @@
 #
 FactoryBot.define do
   factory :country do
-    denomination { "MyString" }
-    number_of_inhabitants { 1 }
-    totat_surface_area { 1.5 }
-    references { "" }
+    denomination { Faker::Address.country }
+    number_of_inhabitants { rand(1000..10000) }
+    totat_surface_area { rand(1000..10000) }
+    # references { "" }
+    continent
   end
 end

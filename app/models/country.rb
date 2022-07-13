@@ -15,6 +15,8 @@ class Country < ApplicationRecord
   has_many :cities, dependent: :destroy
   has_many :geographic_icons, through: :cities
 
+  validates :denomination, :totat_surface_area, presence: true
+
   def update_number_of_inhabitants!
     self.update(number_of_inhabitants: self.get_number_of_inhabitants)
   end
