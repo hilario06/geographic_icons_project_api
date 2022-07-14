@@ -12,9 +12,9 @@
 #
 FactoryBot.define do
   factory :city do
-    denomination { "MyString" }
-    number_of_inhabitants { 1 }
-    totat_surface_area { 1.5 }
-    country { nil }
+    denomination { Faker::Address.city }
+    number_of_inhabitants { rand(1000..10000) }
+    totat_surface_area { rand(1000..10000) }
+    country
   end
 end

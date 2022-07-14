@@ -20,7 +20,7 @@ RSpec.describe Country, type: :model do
       should validate_presence_of(:denomination)
     end
 
-    it 'Validar si denomination esta presente' do
+    it 'Validar si totat_surface_area esta presente' do
       should validate_presence_of(:totat_surface_area)
     end
 
