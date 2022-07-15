@@ -5,6 +5,8 @@ module Api
       before_action :set_geographic_icon, only: %i[update]
 
       def index
+        @geographic_icons = GeographicIcon.all
+        render :index, status: :ok
       end
 
       def create
