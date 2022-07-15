@@ -13,7 +13,7 @@
 require 'rails_helper'
 
 RSpec.describe City, type: :model do
-  describe 'Validaciones del continente' do
+  describe 'Validaciones de ciudad' do
     subject{ build(:city) }
 
     it 'Validar si denomination esta presente' do

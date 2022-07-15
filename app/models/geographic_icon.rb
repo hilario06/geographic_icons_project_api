@@ -13,4 +13,8 @@
 #
 class GeographicIcon < ApplicationRecord
   belongs_to :city
+
+  validates :denomination, :date_of_creation, :height, :history, presence: true
+  validates :height, numericality: true
+
 end

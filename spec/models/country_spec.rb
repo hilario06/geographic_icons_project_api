@@ -13,7 +13,7 @@
 require 'rails_helper'
 
 RSpec.describe Country, type: :model do
-  describe 'Validaciones del continente' do
+  describe 'Validaciones de pais' do
     subject{ build(:country) }
 
     it 'Validar si denomination esta presente' do
