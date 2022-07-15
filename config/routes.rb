@@ -5,10 +5,10 @@ Rails.application.routes.draw do
     namespace :api do
       namespace :v1, defaults: { format: 'json' } do
         resources :users, only: %i[create] do
-          # v1/users/login
+          # api/v1/users/login
           post 'login', on: :collection
         end
-        resources :geographic_icons, only: %i[create]
+        resources :geographic_icons, only: %i[create update]
       end
     end
 
