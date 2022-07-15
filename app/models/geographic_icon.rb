@@ -12,6 +12,8 @@
 #  updated_at       :datetime         not null
 #
 class GeographicIcon < ApplicationRecord
+  acts_as_paranoid # para el borrado logico
+
   belongs_to :city
 
   validates :denomination, :date_of_creation, :height, :history, presence: true

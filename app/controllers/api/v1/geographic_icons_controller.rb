@@ -33,6 +33,10 @@ module Api
       end
 
       def restore
+        @geographic_icon = GeographicIcon.only_deleted.find(params[:geographic_icon_id])
+        head :not_found unless @geographic_icon
+        GeographicIcon.restore @geographic_icon.id
+        render :show, status: :ok
       end
 
       private
