@@ -34,4 +34,13 @@ describe 'Rutas de iconos geograficos' do
       id: '1'
     )
   end
+
+  it 'Ruta restaurar icono geografico' do
+    expect(post: '/api/v1/geographic_icons/1/restore').to route_to(
+      format: 'json',
+      controller: 'api/v1/geographic_icons',
+      action: 'restore',
+      geographic_icon_id: '1'
+    )
+  end
 end

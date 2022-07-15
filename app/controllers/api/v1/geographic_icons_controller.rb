@@ -32,7 +32,11 @@ module Api
         head :ok
       end
 
+      def restore
+      end
+
       private
+
       def geographic_icon_params
         params.require(:geographic_icon).permit(:denomination, :date_of_creation, :height, :history, :city_id)
       end
