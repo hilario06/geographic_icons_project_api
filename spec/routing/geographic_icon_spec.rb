@@ -25,4 +25,13 @@ describe 'Rutas de iconos geograficos' do
       action: 'index'
     )
   end
+
+  it 'Ruta delete iconos geograficos' do
+    expect(delete: '/api/v1/geographic_icons/1').to route_to(
+      format: 'json',
+      controller: 'api/v1/geographic_icons',
+      action: 'destroy',
+      id: '1'
+    )
+  end
 end
