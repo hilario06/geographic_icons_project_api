@@ -4,6 +4,9 @@ module Api
       before_action :authenticate_user!
       before_action :set_geographic_icon, only: %i[update]
 
+      def index
+      end
+
       def create
         @geographic_icon = GeographicIcon.new(geographic_icon_params)
         if @geographic_icon.valid?
