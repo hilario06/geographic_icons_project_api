@@ -8,6 +8,7 @@ Rails.application.routes.draw do
           # v1/users/login
           post 'login', on: :collection
         end
+        resources :geographic_icons, only: %i[create]
       end
     end
 
