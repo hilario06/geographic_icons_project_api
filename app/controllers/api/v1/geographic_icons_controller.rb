@@ -2,7 +2,7 @@ module Api
   module V1
     class GeographicIconsController < ApplicationController
       before_action :authenticate_user!
-      before_action :set_geographic_icon, only: %i[update destroy]
+      before_action :set_geographic_icon, only: %i[update destroy show]
 
       def index
         @geographic_icons = GeographicIcon.all
