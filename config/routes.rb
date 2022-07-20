@@ -12,6 +12,7 @@ Rails.application.routes.draw do
           # api/v1/geographic_icons/:geographic_icon_id/restore
           post 'restore'
         end
+        resources :cities, only: :index
       end
     end
 
