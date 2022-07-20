@@ -8,7 +8,7 @@ Rails.application.routes.draw do
           # api/v1/users/login
           post 'login', on: :collection
         end
-        resources :geographic_icons, only: %i[create update index destroy] do
+        resources :geographic_icons, only: %i[create update index destroy show] do
           # api/v1/geographic_icons/:geographic_icon_id/restore
           post 'restore'
         end

@@ -43,4 +43,13 @@ describe 'Rutas de iconos geograficos' do
       geographic_icon_id: '1'
     )
   end
+
+  it 'Ruta show de los iconos geograficos' do
+    expect(get: '/api/v1/geographic_icons/1').to route_to(
+      format: 'json',
+      controller: 'api/v1/geographic_icons',
+      action: 'show',
+      id: '1'
+    )
+  end
 end

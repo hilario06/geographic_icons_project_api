@@ -9,6 +9,8 @@ module Api
         render :index, status: :ok
       end
 
+      def show; end
+
       def create
         @geographic_icon = GeographicIcon.new(geographic_icon_params)
         if @geographic_icon.valid?
