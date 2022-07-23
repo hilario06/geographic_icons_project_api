@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.describe Api::V1::UsersController, type: :controller do
   describe 'Registro de usuarios' do
     let(:user) { {  email: Faker::Internet.email,
-                    age: rand(30...100),
                     password: Faker::Internet.password(min_length: 10, max_length: 20)
                   }
                 }
@@ -17,7 +16,7 @@ RSpec.describe Api::V1::UsersController, type: :controller do
       end
       context 'Respuesta con valores correctos de user' do
         subject { payload_test } # desde helpers/application_helper/method convirtiendo a json
-        it { is_expected.to include(:id, :email, :age, :token) }
+        it { is_expected.to include(:id, :email, :token) }
       end
       context 'Respuesta con valores correctos de token' do
         subject { payload_test[:token] }
@@ -25,7 +24,7 @@ RSpec.describe Api::V1::UsersController, type: :controller do
       end
     end
 
-    let(:bad_user) { { email: 'test', password: '123456', age: 10 }}
+    let(:bad_user) { { email: 'test', password: '123456' }}
     context 'Usuario incorrecto' do
       before do
         post(:create, format: :json, params: { user: bad_user })

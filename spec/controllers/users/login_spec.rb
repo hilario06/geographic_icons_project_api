@@ -18,7 +18,7 @@ RSpec.describe Api::V1::UsersController, type: :controller do
       end
       context 'Respuesta de login correcta' do
         subject { payload_test }
-        it { is_expected.to include(:id, :email, :age, :token) }
+        it { is_expected.to include(:id, :email, :token) }
       end
       context 'Estructura de respuesta de token correcta' do
         subject { payload_test[:token] }
