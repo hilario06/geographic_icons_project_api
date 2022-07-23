@@ -8,4 +8,12 @@ describe 'Rutas de ciudad' do
       action: 'index'
     )
   end
+
+  it 'Ruta post de ciudades' do
+    expect(post: '/api/v1/cities').to route_to(
+      format: 'json',
+      controller: 'api/v1/cities',
+      action: 'create'
+    )
+  end
 end

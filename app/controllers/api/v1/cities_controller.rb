@@ -5,4 +5,7 @@ class Api::V1::CitiesController < ApplicationController
     @cities = City.all
     render :index, status: :ok
   end
+
+  def create
+  end
 end
