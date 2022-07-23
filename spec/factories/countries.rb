@@ -15,7 +15,6 @@ FactoryBot.define do
     denomination { Faker::Address.country }
     number_of_inhabitants { rand(1000..10000) }
     totat_surface_area { rand(1000..10000) }
-    # references { "" }
     continent
   end
 end
