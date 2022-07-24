@@ -1,6 +1,6 @@
 class Api::V1::CitiesController < ApplicationController
   before_action :authenticate_user!
-
+  before_action :set_city, only: %i[update]
   def index
     @cities = City.all
     render :index, status: :ok
@@ -17,11 +17,21 @@ class Api::V1::CitiesController < ApplicationController
   end
 
   def update
+    if @city.update(city_params)
+      render :show, status: :ok
+    else
+      render json: { errors: @city.errors.messages }, status: :bad_request
+    end
   end
 
   private
 
   def city_params
     params.require(:city).permit(:denomination, :number_of_inhabitants, :totat_surface_area, :country_id)
+  end
+
+  def set_city
+    @city = City.find(params[:id])
+    head :not_found unless @city
   end
 end
