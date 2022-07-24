@@ -17,4 +17,15 @@ class City < ApplicationRecord
   has_many :geographic_icons, dependent: :destroy
 
   validates :denomination, :number_of_inhabitants, :totat_surface_area, presence: true
+
+  def continent
+    country.continent
+  end
+
+  include PgSearch::Model
+  pg_search_scope :global_search,
+    against: [ :denomination ],
+    using: {
+      tsearch: { prefix: true }
+    }
 end

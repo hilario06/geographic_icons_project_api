@@ -3,7 +3,13 @@ class Api::V1::CitiesController < ApplicationController
   before_action :set_city, only: %i[update destroy show]
 
   def index
-    @cities = City.all
+    if params[:query].present?
+      # busqueda con pg_search
+      @cities = City.global_search(params[:query])
+    else
+      @cities = City.all
+    end
+
     render :index, status: :ok
   end
 

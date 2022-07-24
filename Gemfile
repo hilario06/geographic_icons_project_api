@@ -57,3 +57,4 @@ gem 'paranoia', '~> 2.6'
 # para ver en la consola los datos en la bd
 gem 'table_print', '~> 1.5', '>= 1.5.7'
 gem 'annotate', '~> 3.2'
+gem 'pg_search', '~> 2.3', '>= 2.3.6'
