@@ -7,6 +7,9 @@ class Api::V1::CitiesController < ApplicationController
     render :index, status: :ok
   end
 
+  def show
+  end
+
   def create
     @city = City.new(city_params)
     if @city.valid?

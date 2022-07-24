@@ -34,4 +34,13 @@ describe 'Rutas de ciudad' do
       id: '1'
     )
   end
+
+  it 'Ruta show de las ciudades' do
+    expect(get: '/api/v1/cities/1').to route_to(
+      format: 'json',
+      controller: 'api/v1/cities',
+      action: 'show',
+      id: '1'
+    )
+  end
 end
