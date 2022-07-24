@@ -33,6 +33,10 @@ class Api::V1::CitiesController < ApplicationController
   end
 
   def restore
+    @city = City.only_deleted.find(params[:city_id])
+    head :not_found unless @city
+    @city.restore
+    render :show, status: :ok
   end
 
   private
