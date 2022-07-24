@@ -1,6 +1,6 @@
 class Api::V1::CitiesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_city, only: %i[update]
+  before_action :set_city, only: %i[update destroy]
 
   def index
     @cities = City.all
@@ -26,6 +26,8 @@ class Api::V1::CitiesController < ApplicationController
   end
 
   def destroy
+    @city.destroy
+    head :ok
   end
 
   private
