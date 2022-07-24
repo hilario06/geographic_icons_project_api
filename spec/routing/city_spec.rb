@@ -43,4 +43,13 @@ describe 'Rutas de ciudad' do
       id: '1'
     )
   end
+
+  it 'Ruta restaurar ciudad' do
+    expect(post: '/api/v1/cities/1/restore').to route_to(
+      format: 'json',
+      controller: 'api/v1/cities',
+      action: 'restore',
+      city_id: '1'
+    )
+  end
 end
