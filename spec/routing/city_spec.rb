@@ -16,4 +16,13 @@ describe 'Rutas de ciudad' do
       action: 'create'
     )
   end
+
+  it 'Ruta PUT para actualizar ciudades' do
+    expect(patch: '/api/v1/cities/1').to route_to(
+      format: 'json',
+      controller: 'api/v1/cities',
+      action: 'update',
+      id: '1'
+    )
+  end
 end

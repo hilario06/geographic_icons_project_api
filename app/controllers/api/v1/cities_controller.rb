@@ -16,6 +16,9 @@ class Api::V1::CitiesController < ApplicationController
     end
   end
 
+  def update
+  end
+
   private
 
   def city_params
