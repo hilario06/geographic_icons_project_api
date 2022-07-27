@@ -10,6 +10,9 @@ class Api::V1::CountriesController < ApplicationController
     render :index, status: :ok
   end
 
+  def show
+  end
+
   def create
   end
 
@@ -17,5 +20,8 @@ class Api::V1::CountriesController < ApplicationController
   end
 
   def destroy
+  end
+
+  def restore
   end
 end

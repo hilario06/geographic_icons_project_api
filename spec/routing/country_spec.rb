@@ -34,4 +34,22 @@ describe 'Rutas de paises' do
       id: '1'
     )
   end
+
+  it 'Ruta show de las paises' do
+    expect(get: '/api/v1/countries/1').to route_to(
+      format: 'json',
+      controller: 'api/v1/countries',
+      action: 'show',
+      id: '1'
+    )
+  end
+
+  it 'Ruta restaurar pais' do
+    expect(post: '/api/v1/countries/1/restore').to route_to(
+      format: 'json',
+      controller: 'api/v1/countries',
+      action: 'restore',
+      country_id: '1'
+    )
+  end
 end
