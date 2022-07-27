@@ -25,4 +25,13 @@ describe 'Rutas de paises' do
       id: '1'
     )
   end
+
+  it 'Ruta delete paises' do
+    expect(delete: '/api/v1/countries/1').to route_to(
+      format: 'json',
+      controller: 'api/v1/countries',
+      action: 'destroy',
+      id: '1'
+    )
+  end
 end

@@ -15,4 +15,7 @@ class Api::V1::CountriesController < ApplicationController
 
   def update
   end
+
+  def destroy
+  end
 end
