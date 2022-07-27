@@ -16,4 +16,13 @@ describe 'Rutas de paises' do
       action: 'create'
     )
   end
+
+  it 'Ruta PUT para actualizar paises' do
+    expect(patch: '/api/v1/countries/1').to route_to(
+      format: 'json',
+      controller: 'api/v1/countries',
+      action: 'update',
+      id: '1'
+    )
+  end
 end

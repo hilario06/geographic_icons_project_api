@@ -12,4 +12,7 @@ class Api::V1::CountriesController < ApplicationController
 
   def create
   end
+
+  def update
+  end
 end
