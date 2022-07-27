@@ -9,7 +9,6 @@ class Api::V1::CitiesController < ApplicationController
     else
       @cities = City.all
     end
-
     render :index, status: :ok
   end
 

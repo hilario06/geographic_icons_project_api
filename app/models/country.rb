@@ -17,6 +17,13 @@ class Country < ApplicationRecord
 
   validates :denomination, :totat_surface_area, presence: true
 
+  include PgSearch::Model
+  pg_search_scope :global_search,
+    against: [ :denomination ],
+    using: {
+      tsearch: { prefix: true }
+    }
+
   def update_number_of_inhabitants!
     self.update(number_of_inhabitants: self.get_number_of_inhabitants)
   end
