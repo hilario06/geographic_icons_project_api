@@ -19,7 +19,7 @@ class City < ApplicationRecord
   validates :denomination, :number_of_inhabitants, :totat_surface_area, presence: true
 
   include PgSearch::Model
-  pg_search_scope :global_search,
+  pg_search_scope :city_search,
     against: [ :denomination ],
     using: {
       tsearch: { prefix: true }

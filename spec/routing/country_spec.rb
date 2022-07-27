@@ -8,4 +8,12 @@ describe 'Rutas de paises' do
       action: 'index'
     )
   end
+
+  it 'Ruta post de paises' do
+    expect(post: '/api/v1/countries').to route_to(
+      format: 'json',
+      controller: 'api/v1/countries',
+      action: 'create'
+    )
+  end
 end

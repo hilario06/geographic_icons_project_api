@@ -18,8 +18,11 @@ class Country < ApplicationRecord
   validates :denomination, :totat_surface_area, presence: true
 
   include PgSearch::Model
-  pg_search_scope :global_search,
+  pg_search_scope :contry_search,
     against: [ :denomination ],
+    associated_against: {
+      continent: [ :denomination ]
+    },
     using: {
       tsearch: { prefix: true }
     }

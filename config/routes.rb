@@ -15,7 +15,7 @@ Rails.application.routes.draw do
         resources :cities, only: %i[index create update destroy show] do
           post 'restore'
         end
-        resources :countries, only: %i[index]
+        resources :countries, only: %i[index create]
       end
     end
 
