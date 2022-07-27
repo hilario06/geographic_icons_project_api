@@ -32,6 +32,8 @@ class Api::V1::CountriesController < ApplicationController
   end
 
   def destroy
+    @country.destroy
+    head :ok
   end
 
   def restore
