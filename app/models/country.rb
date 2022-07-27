@@ -11,6 +11,8 @@
 #  updated_at            :datetime         not null
 #
 class Country < ApplicationRecord
+  acts_as_paranoid # para el borrado logico
+
   belongs_to :continent
   has_many :cities, dependent: :destroy
   has_many :geographic_icons, through: :cities

@@ -5,7 +5,7 @@ class Api::V1::CitiesController < ApplicationController
   def index
     if params[:query].present?
       # busqueda con pg_search
-      @cities = City.city_search(params[:query])
+      @cities = City.contry_search(params[:query])
     else
       @cities = City.all
     end

@@ -37,6 +37,10 @@ class Api::V1::CountriesController < ApplicationController
   end
 
   def restore
+    @country = Country.only_deleted.find(params[:country_id])
+    head :not_found unless @country
+    @country.restore
+    render :show, status: :ok
   end
 
   private
