@@ -15,6 +15,7 @@ class City < ApplicationRecord
 
   belongs_to :country
   has_many :geographic_icons, dependent: :destroy
+  has_one_attached :image
 
   validates :denomination, :number_of_inhabitants, :totat_surface_area, presence: true
 

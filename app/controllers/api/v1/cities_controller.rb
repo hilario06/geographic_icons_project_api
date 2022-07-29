@@ -18,6 +18,7 @@ class Api::V1::CitiesController < ApplicationController
     @city = City.new(city_params)
     if @city.valid?
       @city.save
+      Country.find(@city.country_id).update_sum_number_of_inhabitants!(@city.number_of_inhabitants)
       render :show, status: :created
     else
       render json: { errors: @city.errors.messages }, status: :bad_request
@@ -47,7 +48,7 @@ class Api::V1::CitiesController < ApplicationController
   private
 
   def city_params
-    params.require(:city).permit(:denomination, :number_of_inhabitants, :totat_surface_area, :country_id)
+    params.require(:city).permit(:denomination, :number_of_inhabitants, :totat_surface_area, :country_id, :image)
   end
 
   def set_city

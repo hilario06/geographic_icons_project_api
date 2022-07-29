@@ -44,7 +44,7 @@ module Api
       private
 
       def geographic_icon_params
-        params.require(:geographic_icon).permit(:denomination, :date_of_creation, :height, :history, :city_id)
+        params.require(:geographic_icon).permit(:denomination, :date_of_creation, :height, :history, :city_id, :image)
       end
 
       def set_geographic_icon

@@ -46,7 +46,7 @@ class Api::V1::CountriesController < ApplicationController
   private
 
   def country_params
-    params.require(:country).permit(:denomination, :number_of_inhabitants, :totat_surface_area, :continent_id)
+    params.require(:country).permit(:denomination, :number_of_inhabitants, :totat_surface_area, :continent_id, :image)
   end
 
   def set_country

@@ -12,5 +12,7 @@ class Continent < ApplicationRecord
   has_many :cities, through: :countries
   has_many :geographic_icons, through: :cities
 
+  has_one_attached :image
+
   validates :denomination, presence: true
 end

@@ -17,6 +17,8 @@ class Country < ApplicationRecord
   has_many :cities, dependent: :destroy
   has_many :geographic_icons, through: :cities
 
+  has_one_attached :image
+
   validates :denomination, :totat_surface_area, presence: true
 
   include PgSearch::Model
@@ -28,6 +30,10 @@ class Country < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
+
+  def update_sum_number_of_inhabitants!(city_number_of_inhabitants)
+    self.update(number_of_inhabitants: self.number_of_inhabitants + city_number_of_inhabitants)
+  end
 
   def update_number_of_inhabitants!
     self.update(number_of_inhabitants: self.get_number_of_inhabitants)
